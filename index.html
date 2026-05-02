@@ -631,6 +631,62 @@
     flex-shrink: 0;
   }
 
+  /* TEAM */
+  #team {
+    background: var(--white);
+    border-top: 1px solid var(--green-100);
+    border-bottom: 1px solid var(--green-100);
+  }
+
+  .team-header {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .team-card {
+    background: var(--cream);
+    border: 1px solid var(--green-100);
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .team-card:hover {
+    border-color: var(--green-200);
+    box-shadow: 0 12px 32px rgba(59, 109, 17, 0.06);
+  }
+
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+
+  .team-role {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-600);
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+  }
+
+  .team-bio {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
   /* VOLUNTEER */
   #volunteer { background: var(--cream-dark); }
 
@@ -864,6 +920,7 @@
     <li><a href="#pillars">What We Do</a></li>
     <li><a href="#technologies">Technologies</a></li>
     <li><a href="#why">Our Approach</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#volunteer">Volunteer</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
     <li>
@@ -1148,7 +1205,7 @@
       <h2 class="section-title" style="color:var(--white);margin-top:0.5rem;">Why Clean World<br><em>Project exists</em></h2>
       <div class="line-accent" style="background:rgba(106,171,69,0.6);margin:1.5rem 0;"></div>
       <p class="section-body" style="color:rgba(255,255,255,0.6);">
-        We're a small, student-led, early-stage initiative created because existing environmental technologies are often hard to find, understand, or access. We focus on multiple aspects aside from documentation, such as outreach & collaboration with existing NGOs & Businesses. We currently have growing presence across Australia (Perth & Victoria), Singapore, the United States (California), Canada (Toronto) and Malaysia (Nationwide)
+        We're a small, student-led, early-stage initiative created because existing environmental technologies are often hard to find, understand, or access. We focus on multiple expects aside from documentation, such as outreach & collaboration with existing NGOs & Businesses. We currently operate across Australia (Perth & Victoria), Singapore, the United States (California), and Canada (Toronto).
       </p>
       <div class="why-sources" style="margin-top:2rem;">
         <div class="why-sources-title">How we collect information</div>
@@ -1173,6 +1230,39 @@
         <div class="why-block-title">Built for everyone & Beyond documentation</div>
         <p class="why-block-text">Our research is available to governments, businesses, schools and individuals. We believe cleaner environments start with clearer information. While research and documentation are core to our work, we engage in outreach, collaboration and awareness to make environmental solutions accesible.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="team-header">
+    <span class="section-tag reveal">People behind the work</span>
+    <h2 class="section-title reveal reveal-delay-1">Meet our <em>team</em></h2>
+    <p class="section-body reveal reveal-delay-2" style="margin-top:0.5rem;">
+      Replace the placeholders below with your real team members.
+    </p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-name">[Name placeholder]</div>
+      <div class="team-role">[Role placeholder]</div>
+      <p class="team-bio">[One or two sentences about what this person does — placeholder text.]</p>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-name">[Name placeholder]</div>
+      <div class="team-role">[Role placeholder]</div>
+      <p class="team-bio">[One or two sentences about what this person does — placeholder text.]</p>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-name">[Name placeholder]</div>
+      <div class="team-role">[Role placeholder]</div>
+      <p class="team-bio">[One or two sentences about what this person does — placeholder text.]</p>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-name">[Name placeholder]</div>
+      <div class="team-role">[Role placeholder]</div>
+      <p class="team-bio">[One or two sentences about what this person does — placeholder text.]</p>
     </div>
   </div>
 </section>
