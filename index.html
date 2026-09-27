@@ -303,6 +303,10 @@
     .district-item { display:flex;justify-content:space-between;align-items:center;gap:20px;background:rgba(255,255,255,.72);padding:15px 18px;border-radius:16px;border:1px solid rgba(17,21,16,.06);font-weight:800; }
     .district-item span:last-child {color:var(--green);font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;}
 
+    .leadership-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px; }
+    .leader-card h3 { margin-bottom:6px; }
+    .leader-role { color:var(--green);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px; }
+
     .faq { display:grid;grid-template-columns:.75fr 1.25fr;gap:68px;align-items:start; }
     details { border-top:1px solid var(--line); padding:19px 0; }
     details:last-child { border-bottom:1px solid var(--line); }
@@ -335,7 +339,7 @@
       .hero-grid,.split,.program-grid,.coverage,.district,.faq,.cta-grid {grid-template-columns:1fr;}
       .hero-card {min-height:420px;max-width:650px;}
       .stats {grid-template-columns:repeat(2,1fr);}
-      .story-grid,.areas {grid-template-columns:1fr 1fr;}
+      .story-grid,.areas,.leadership-grid {grid-template-columns:1fr 1fr;}
       .sticky {position:static;}
       .section {padding:86px 0;}
       .district,.cta {padding:38px;}
@@ -348,7 +352,7 @@
       h1 {font-size:clamp(3rem,16vw,5.1rem);}
       .brand span {font-size:.92rem;}
       .brand span small {display:none;}
-      .story-grid,.areas {grid-template-columns:1fr;}
+      .story-grid,.areas,.leadership-grid {grid-template-columns:1fr;}
       .stat {padding:18px;}
       .stat strong {font-size:1.65rem;}
       .card {padding:23px;}
@@ -453,6 +457,7 @@
         <a href="#program">Green Ambassadors</a>
         <a href="#action">Take Action</a>
         <a href="#districts">Districts</a>
+        <a href="#leadership">Leadership</a>
         <a href="#contact">Contact</a>
         <a class="nav-cta" href="https://forms.gle/u7WDYrS9AJ7cayPb7" target="_blank" rel="noreferrer">Join YAC</a>
       </div>
@@ -650,6 +655,17 @@
       </div>
     </section>
 
+    <section class="section" id="leadership">
+      <div class="container">
+        <div class="reveal show">
+          <span class="eyebrow">Our People</span>
+          <h2>Meet our leadership.</h2>
+          <p class="lead">The volunteers steering YAC's national direction and local districts.</p>
+        </div>
+        <div class="leadership-grid" id="leadershipGrid"></div>
+      </div>
+    </section>
+
     <section class="section" id="faq">
       <div class="container faq">
         <div class="reveal">
@@ -727,6 +743,37 @@
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); });
     }, { threshold: 0.10 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* =========================================================
+       LEADERSHIP TEAM
+       To add someone, copy a {...} block below and edit it.
+       No images — just name and a short description.
+       ========================================================= */
+    const leadershipTeam = [
+      { name: "C. Chan", role: "Founder / Coordinator", bio: "Founded YAC and sets its national direction — overseeing strategy, partnerships and the growth of new districts across Malaysia." },
+      { name: "W. Danish", role: "Membership Lead", bio: "Looks after YAC's volunteer network — onboarding new Green Ambassadors, keeping members engaged, and connecting them with the right opportunities." },
+      // Add more people here — copy a line above and edit the name, role and bio.
+    ];
+
+    function renderLeadership() {
+      const grid = document.getElementById('leadershipGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      leadershipTeam.forEach(person => {
+        const card = document.createElement('div');
+        card.className = 'card leader-card';
+        const h3 = document.createElement('h3');
+        h3.textContent = person.name;
+        const role = document.createElement('div');
+        role.className = 'leader-role';
+        role.textContent = person.role;
+        const p = document.createElement('p');
+        p.textContent = person.bio;
+        card.append(h3, role, p);
+        grid.appendChild(card);
+      });
+    }
+    renderLeadership();
   </script>
 </body>
 </html>
